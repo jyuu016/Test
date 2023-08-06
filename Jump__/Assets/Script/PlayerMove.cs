@@ -16,6 +16,9 @@ public class PlayerMove : MonoBehaviour
 
     private bool ground = false;
     public LayerMask layer;
+    
+    
+    public int spawnCount;
 
     private void Start()
     {
@@ -38,7 +41,11 @@ public class PlayerMove : MonoBehaviour
             rigidbody.AddForce(jumpPower, ForceMode.VelocityChange);
         }
 
-        
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            transform.position = GameObject.FindWithTag("SpawnManager").GetComponent<SpawnPoint>().ReSpawn(spawnCount);
+        }
+
     }
 
     private void FixedUpdate()

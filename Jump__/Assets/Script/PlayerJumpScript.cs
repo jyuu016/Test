@@ -7,7 +7,7 @@ public class PlayerJumpScript : MonoBehaviour
     public float jumpForce = 5f; 
     public LayerMask groundLayer;
 
-    private bool isGrounded = false;
+    [SerializeField]private bool isGrounded = false;
     private Rigidbody rb;
 
     private void Start()
